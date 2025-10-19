@@ -106,4 +106,3 @@ def guardar_grupos_en_excel(grupos: list, salida_excel: str = "Grupos_Hermanos.x
 grupos = createGruop(Lista_hermanos.hermanos)
 printDates.printsDate(grupos, 'ListaHermanos')
 guardar_grupos_en_excel(grupos)
-print(grupos)
