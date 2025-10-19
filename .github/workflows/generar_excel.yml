@@ -1,0 +1,39 @@
+name: Generar Excel y subir artifact
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # Permite ejecutarlo manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Descargar tu código
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # 2️⃣ Instalar Python
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3️⃣ Instalar dependencias
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4️⃣ Ejecutar tu script principal
+      - name: Ejecutar script para generar Excel
+        run: |
+          python createList.py
+
+      # 5️⃣ Subir el Excel como artifact
+      - name: Subir archivo Excel generado
+        uses: actions/upload-artifact@v4
+        with:
+          name: Excel-Generado
+          path: Grupos_Hermanos.xlsx
