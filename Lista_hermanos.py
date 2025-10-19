@@ -1,0 +1,25 @@
+
+hermanos = {
+    "Brayan - Sandra":2,
+    "Jhonny - Adriana":2,
+    "Ahmet - Catalina":2,
+    "Jair -  Elizabeth":2,
+    "Nicolas - Juan Jose":2,
+    "Ramiro - Karina":2,
+    "Alvaro - Martha":2,
+    "Ariel - Ricsy":2,
+    "Enrique - Tatiana":2,
+    "Jaime":1,
+    "Carlos":1,
+    "Diana ":1,
+    "Maria Carolina":1,
+    "Eduard":1,
+    "Henry":1,
+    "Liber":1,
+    "Luz Mil":1,
+    "Mariam":1,
+    "Virginia":1,
+    "Yuranis ":1,
+    "Yolanda":1,
+    "Bertha":1
+}
