@@ -1,0 +1,13 @@
+# --- Entorno virtual ---
+.venv/
+__pycache__/
+*.pyc
+
+# --- Archivos generados ---
+Grupos_Hermanos.xlsx
+ListaHermanos.txt
+
+# --- Configuración local ---
+.vscode/
+*.log
+
