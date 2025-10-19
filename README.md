@@ -1,4 +1,4 @@
-# 🧠 Comunidad — Automatización de Reportes con Python & GitHub Actions
+# 🧠 data-reports-pipeline — Automatización de Reportes con Python & GitHub Actions
 
 Proyecto de **automatización de generación y envío de reportes Excel**, desarrollado en **Python** y desplegado con **GitHub Actions**.
 
