@@ -37,3 +37,14 @@ jobs:
         with:
           name: Excel-Generado
           path: Grupos_Hermanos.xlsx
+
+      - name: Enviar correo con Python
+        env:
+          SMTP_SERVER: smtp.gmail.com
+          SMTP_PORT: 465
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: |
+          python send_mail.py
+    
