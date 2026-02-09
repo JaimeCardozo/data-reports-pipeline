@@ -49,8 +49,8 @@ Si deseas probar el proyecto en tu equipo:
 
 ```bash
 # 1️⃣ Clona el repositorio
-git clone https://github.com/JaimeCardozo/Comunidad.git
-cd Comunidad
+git clone https://github.com/JaimeCardozo/data-reports-pipeline.git
+cd data-reports-pipeline
 
 # 2️⃣ Crea un entorno virtual
 python -m venv .venv
