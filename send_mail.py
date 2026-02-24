@@ -22,18 +22,18 @@ Hola 👋,
 Adjunto el archivo Excel generado con los grupos de este mes.
 
 📅 Fecha de generación: {fecha_actual}
-📎 Archivo: Grupos_Hermanos.xlsx
+📎 Archivo: Grupos_Celebraciones.xlsx
 
 Saludos,
 ¡La paz!
 """
 )
 
-with open("Grupos_Hermanos.xlsx", "rb") as f:
+with open("Grupos_Celebraciones.xlsx", "rb") as f:
     data = f.read()
 msg.add_attachment(data, maintype="application",
                    subtype="vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                   filename="Grupos_Hermanos.xlsx")
+                   filename="Grupos_Celebraciones.xlsx")
 
 context = ssl.create_default_context()
 with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT, context=context) as smtp:

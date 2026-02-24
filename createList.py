@@ -53,7 +53,7 @@ def guardar_grupos_en_excel(grupos: list, dates: list, salida_excel: str = "Grup
         Lista de diccionarios. Cada elemento debe tener las claves:
         'number' (int), 'value' (int), 'hermanos' (list[str])
     salida_excel : str
-        Nombre del archivo Excel de salida (por defecto 'Grupos_Hermanos.xlsx')
+        Nombre del archivo Excel de salida (por defecto 'Grupos_Celebraciones.xlsx')
 
     Retorna:
     --------
