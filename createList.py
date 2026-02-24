@@ -1,7 +1,9 @@
 """Crear Grupos de los Hermanos"""
 import Lista_hermanos
 import random
+from datetime import datetime
 import printDates
+import dateCelebrations
 import pandas as pd
 from openpyxl.utils import get_column_letter
 
@@ -40,9 +42,7 @@ def choiceGroup(sw: dict):
     else: 
      return None
 
-
-
-def guardar_grupos_en_excel(grupos: list, salida_excel: str = "Grupos_Hermanos.xlsx"):
+def guardar_grupos_en_excel(grupos: list, dates: list, salida_excel: str = "Grupos_Hermanos.xlsx"):
     """
     Guarda una lista de grupos (lista de diccionarios) en un archivo Excel,
     donde cada grupo se escribe en una hoja distinta.
@@ -66,21 +66,27 @@ def guardar_grupos_en_excel(grupos: list, salida_excel: str = "Grupos_Hermanos.x
 
         # Crear el Excel con varias hojas (una por grupo)
         with pd.ExcelWriter(salida_excel, engine="openpyxl") as writer:
+            today = datetime.today()
+            year = today.year
             for grupo in grupos:
                 numero = grupo.get("number", "SinNúmero")
+                #print(numero)
                 value = grupo.get("value", 0)
                 hermanos = grupo.get("hermanos", [])
 
                 # Crear DataFrame con los datos del grupo
                 df = pd.DataFrame({
                     "Hermanos": hermanos,
-                    #"Grupo": f"Grupo {numero}",
+                    "Fecha": f"{dates[numero]}/{year}",
                     "Total": value
                 })
 
                 # Guardar cada grupo en una hoja diferente
                # Guardar hoja
-                hoja_nombre = f"Grupo_{numero+1}"
+                if(numero<=3):
+                   hoja_nombre = f"Palabra_{numero+1}"
+                else:
+                   hoja_nombre = f"Eucaristia_{numero-3}"
                 df.to_excel(writer, sheet_name=hoja_nombre, index=False)
 
                 # === Ajustar el ancho de columnas ===
@@ -103,6 +109,7 @@ def guardar_grupos_en_excel(grupos: list, salida_excel: str = "Grupos_Hermanos.x
         return False
 
 
+
 grupos = createGruop(Lista_hermanos.hermanos)
-printDates.printsDate(grupos, 'ListaHermanos')
-guardar_grupos_en_excel(grupos)
+dates = dateCelebrations.datesCelebrationList()
+guardar_grupos_en_excel(grupos, dates, 'Grupos_Celebraciones.xlsx')

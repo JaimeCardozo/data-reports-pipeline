@@ -9,7 +9,7 @@ SMTP_USER   = os.environ["SMTP_USERNAME"]
 SMTP_PASS   = os.environ["SMTP_PASSWORD"]
 EMAIL_TO    = os.environ["EMAIL_TO"]
 
-fecha_actual = datetime.now().strftime("%Y-%m-%d %H:%M")
+fecha_actual = datetime.now().strftime("%Y-%m-%d")
 
 msg = EmailMessage()
 msg["Subject"] = f"Grupos Hermanos - {fecha_actual}"
